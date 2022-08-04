@@ -1,10 +1,15 @@
-import logo from './logo.svg';
+import React, {Component} from 'react';
+
 import './App.css';
 
 function App() {
   return (
     <div>
-      <p>HOLA</p>
+      <h1>Administración de Pacientes</h1>
+      <form>
+        <label>Nombre</label>
+        <input type="text" name="nombre"/>
+      </form>
     </div>
   );
 }
