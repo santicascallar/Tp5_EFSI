@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React from 'react';
+import Form from './components/Form';
 
 import './App.css';
 
@@ -6,10 +7,9 @@ function App() {
   return (
     <div>
       <h1>Administración de Pacientes</h1>
-      <form>
-        <label>Nombre</label>
-        <input type="text" name="nombre"/>
-      </form>
+
+      <h2>Crear mi cita</h2>
+      <Form/>
     </div>
   );
 }
