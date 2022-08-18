@@ -24,8 +24,8 @@ const FormCustom = function ({setCitas}) {
     const formPaciente = (event) => {
         event.preventDefault(); //evitar que se reinicie la pagina cada vez que apretamos el boton
         console.log(paciente.nombre)
-        if (!paciente) {
-          console.log("completa")
+        if (!paciente.nombre || !paciente.nombreDueño || !paciente.fecha || !paciente.hora || !paciente.sintomas) {
+          alert("Faltan completar datos")
         }else{
         setCitas(prev => [...prev, {
         paciente
@@ -36,35 +36,35 @@ const FormCustom = function ({setCitas}) {
 
     return (
         <Fragment>
-        <form onSubmit={formPaciente}>
+        <Form onSubmit={formPaciente}>
 
             <Form.Group className="mb-3" controlId="formBasicText">
-            <Form.Label>Nombre Mascota</Form.Label>
+            <Form.Label style={{color: "white"}}>Nombre Mascota</Form.Label>
             <Form.Control type="text" placeholder="Nombre Mascota" name="nombre" onChange={formularioPaciente}/>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicText">
-            <Form.Label>Nombre Dueño</Form.Label>
+            <Form.Label style={{color: "white"}}>Nombre Dueño</Form.Label>
             <Form.Control type="text" placeholder="Nombre Dueño" name="nombreDueño" onChange={formularioPaciente}/>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicText">
-            <Form.Label>Fecha</Form.Label>
+            <Form.Label style={{color: "white"}}>Fecha</Form.Label>
             <Form.Control type="date" placeholder="Fecha" name="fecha" onChange={formularioPaciente}/>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicText">
-            <Form.Label>Hora</Form.Label>
+            <Form.Label style={{color: "white"}}>Hora</Form.Label>
             <Form.Control type="time" placeholder="Hora" name="hora" onChange={formularioPaciente}/>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicText">
-            <Form.Label>Sintomas</Form.Label>
+            <Form.Label style={{color: "white"}}>Sintomas</Form.Label>
             <Form.Control type="text" placeholder="Sintomas" name="sintomas" onChange={formularioPaciente}/>
             </Form.Group>
 
-            <Button variant="primary" type="submit">Agregar Cita</Button>
-        </form>
+            <Button variant="primary" type="submit" className="w-100 boton2">Agregar Cita</Button>
+        </Form>
         </Fragment>
     )
 }
