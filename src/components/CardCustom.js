@@ -3,8 +3,7 @@ import { Card, Button } from 'react-bootstrap';
 
 const CardCustom = ({citas, setCitas}) => {
 
-    const borrarCita = (i) => {
-        console.log("Cita eliminada");
+    const eliminarCita = (i) => {
         const newCitas = [...citas];
         newCitas.splice(i, 1);
         setCitas(newCitas);
@@ -20,7 +19,7 @@ const CardCustom = ({citas, setCitas}) => {
               <p><strong>Hora: </strong><span>{cita.paciente.hora}</span></p>
               <p><strong>Sintomas: </strong><span>{cita.paciente.sintomas}</span></p>
               
-              <Button variant="primary" type="submit" className="w-100 boton2" onClick={() => {borrarCita(i)}}>
+              <Button variant="primary" type="submit" className="w-100 boton2" onClick={() => {eliminarCita(i)}}>
                 Eliminar
               </Button>
             </Card.Body>
