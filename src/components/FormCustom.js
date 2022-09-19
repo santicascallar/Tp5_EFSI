@@ -30,7 +30,14 @@ const FormCustom = function ({setCitas}) {
         setCitas(prev => [...prev, {
         paciente
         }])
-        setPaciente("")
+        setPaciente({
+            ...paciente,
+            nombre : '',
+            nombreDueño : '',
+            fecha: '',
+            hora: '',
+            sintomas: '',
+        })
       }
     }
 
@@ -40,27 +47,27 @@ const FormCustom = function ({setCitas}) {
 
             <Form.Group className="mb-3" controlId="formBasicText">
             <Form.Label style={{color: "white"}}>Nombre Mascota</Form.Label>
-            <Form.Control type="text" placeholder="Nombre Mascota" name="nombre" onChange={formularioPaciente}/>
+            <Form.Control type="text" placeholder="Nombre Mascota" name="nombre" onChange={formularioPaciente} value={paciente.nombre}/>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicText">
             <Form.Label style={{color: "white"}}>Nombre Dueño</Form.Label>
-            <Form.Control type="text" placeholder="Nombre Dueño" name="nombreDueño" onChange={formularioPaciente}/>
+            <Form.Control type="text" placeholder="Nombre Dueño" name="nombreDueño" onChange={formularioPaciente} value={paciente.nombreDueño}/>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicText">
             <Form.Label style={{color: "white"}}>Fecha</Form.Label>
-            <Form.Control type="date" placeholder="Fecha" name="fecha" onChange={formularioPaciente}/>
+            <Form.Control type="date" placeholder="Fecha" name="fecha" onChange={formularioPaciente} value={paciente.fecha}/>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicText">
             <Form.Label style={{color: "white"}}>Hora</Form.Label>
-            <Form.Control type="time" placeholder="Hora" name="hora" onChange={formularioPaciente}/>
+            <Form.Control type="time" placeholder="Hora" name="hora" onChange={formularioPaciente} value={paciente.hora}/>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicText">
             <Form.Label style={{color: "white"}}>Sintomas</Form.Label>
-            <Form.Control type="text" placeholder="Sintomas" name="sintomas" onChange={formularioPaciente}/>
+            <Form.Control type="text" placeholder="Sintomas" name="sintomas" onChange={formularioPaciente} value={paciente.sintomas}/>
             </Form.Group>
 
             <Button variant="primary" type="submit" className="w-100 boton2">Agregar Cita</Button>
